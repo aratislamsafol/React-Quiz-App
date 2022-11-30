@@ -1,0 +1,11 @@
+.leftSide{
+    width: 35%;
+}
+.leftSide img{
+    width: 100%;
+}
+.leftSide h2{
+    font-weight: bolder;
+    margin-bottom: 44px;
+    font-size: 34px;
+} 

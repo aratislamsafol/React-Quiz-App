@@ -1,0 +1,12 @@
+.signUp{
+    display: flex;
+    gap: 18px;
+}
+.signUp .icon,.signUp .logout{
+    font-size: 13px;
+    margin-top: 9%;
+}
+
+.signUp .logout{
+    font-size: 15px;
+}

@@ -1,0 +1,32 @@
+.success{
+    width: 90%;
+    margin:0 auto;
+}
+.score{
+    display: grid;
+    grid-template-columns: auto auto;
+    text-align: center;
+}
+.score h1{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    float:right
+}
+.score img{
+    display: flex;
+    margin-left: 20%;
+    width: fit-content;
+    width: 50%;
+}
+.answerArea{
+    background-color:rgb(241, 238, 238);
+    padding: 4px;
+    margin-top: 10px;
+}
+.fa-circle-question{
+    color: green;
+}
+span{
+    color: green;
+}
