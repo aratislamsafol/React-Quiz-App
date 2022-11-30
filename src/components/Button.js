@@ -1,4 +1,4 @@
 import classes from './assets/css/module/submitBtn.module.css';
 export default function Button({text}){
-    return <button className={classes.submit_btn} type="button">{text}</button>;
+    return <button type="button" className={classes.submit_btn}>{text}</button>;
 }
