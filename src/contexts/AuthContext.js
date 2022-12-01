@@ -27,7 +27,7 @@ export function AuthProvider({children}){
     async function Signup(email,password,username){
         const auth=getAuth();
         await createUserWithEmailAndPassword(auth,email,password);
-
+        
         // update profile
         await updateProfile(auth.currentUser,{displayName:username});
         const user=auth.currentUser;

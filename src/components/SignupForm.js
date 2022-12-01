@@ -31,7 +31,7 @@ export default function SignUpForm(){
             setError("");
             setLoading(true);
             await Signup(email,password,username);
-            Navigate.push("/");
+            Navigate("/");
         }catch(err){
             console.log(err);
             setLoading(false);
@@ -53,7 +53,7 @@ export default function SignUpForm(){
 
             <Button disabled={loading} type="submit" text="Submit Now"/>
 
-            {error && <p className='error'>`Error Occured -${error}`</p>}
+            {error && <p className='error' style={{color:'white', backgroundColor:'#F08080',padding:'10px',borderRadius:'6px',marginTop:'10px'}}>{error}</p>}
         </Form>
     );
 }
