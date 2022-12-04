@@ -10,7 +10,7 @@ import PrivateRoute from './components/PrivateRoute';
 // import PublicRoute from './components/PublicRoute';
 // import React, { Fragment } from 'react';
 import { AuthProvider } from './contexts/AuthContext';
-// import React, {Fragment} from 'react';
+import React, {Fragment} from 'react';
 function App() {
     return (
         <div className="App">
@@ -22,15 +22,13 @@ function App() {
                                 <Route exact path='/' element={<Home/>}></Route>
                                 <Route exact path='/signup' element={<Signup/>}></Route>
                                 <Route exact path='/login' element={<Login/>}></Route>
+                                <Route element={<PrivateRoute />}>
+                                    <Route exact path="/quiz" element={<Quiz/>} />
+                                </Route>
                                
-                                <Route exact path="/quiz" element={<PrivateRoute>
-                                    <Route  element={<Quiz/>} />
-                                    </PrivateRoute>}></Route>
-                                
-                                
                                 {/* <Route exact path="/quiz" element={<Quiz/>} /> */}
                                 <Route exact path='/success' element={<Success />}></Route>
-                            </Routes>
+                            </Routes> 
                         </Layout>
                     {/* </Fragment> */}
                 </AuthProvider>
