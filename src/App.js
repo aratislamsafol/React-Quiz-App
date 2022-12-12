@@ -8,6 +8,8 @@ import Signup from './components/pages/Signup';
 import Success from './components/pages/Success';
 import PrivateRoute from './components/PrivateRoute';
 import PublicRoute from './components/PublicRoute';
+
+
 import { AuthProvider } from './contexts/AuthContext';
 function App() {
     return (
@@ -23,7 +25,7 @@ function App() {
                             </Route>
 
                             <Route element={<PrivateRoute />}>
-                                <Route exact path="/quiz" element={<Quiz/>} />
+                                <Route exact path="/quiz/:id" element={<Quiz/>} />
                                 <Route exact path='/success' element={<Success />}></Route>
                             </Route>
                         </Routes> 
