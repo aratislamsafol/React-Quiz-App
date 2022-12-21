@@ -47,9 +47,9 @@ export default function Quiz(){
 
     return (
         <>
-            {console.log(questionAnswer)}   
+            {/* {console.log(questionAnswer)}    */}
             <div className={classes.topics}>
-                <h2>{questionAnswer[currentQuestion].title}</h2>
+                {/* <h2>{questionAnswer[currentQuestion].title}</h2> */}
                 <p>Question can havae multiple answers</p>
             </div>
             <Answers />

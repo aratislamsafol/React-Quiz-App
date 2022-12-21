@@ -1,20 +1,20 @@
-import { get, getDatabase, orderByKey, ref } from "firebase/database";
+import { get, getDatabase, orderByKey, query, ref } from "firebase/database";
 import { useEffect, useState } from "react";
 
 export default function QuizQuestionHook(VideoId){
     const [loading,setLoading]=useState(true);
     const [error,setError]=useState(false);
-    const [questions,setQuestions]=useState(1);
+    const [questions,setQuestions]=useState([]);
 
     useEffect(() => {
         async function fetchQuizData(){
             const db=getDatabase();
             const quizRef=ref(db,"quiz/"+VideoId+"/questions"); 
-            const query=(quizRef,orderByKey());
+            const questionQuery=query(quizRef,orderByKey());
             try{
                 setError(false);
                 setLoading(true);
-                const snapshot=await get(query);
+                const snapshot=await get(questionQuery);
                
                 setLoading(false);
 
