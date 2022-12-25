@@ -1,4 +1,4 @@
-.answer {
+.answer,.answerSuccess {
     width: 95%;
     height: 58px;
     background: var(--questionBG);
@@ -16,4 +16,10 @@
 
   .answer input {
     margin-right: 15px;
+  }
+  .correct{
+    background-color: green;
+  }
+  .wrong{
+    background-color: red;
   }

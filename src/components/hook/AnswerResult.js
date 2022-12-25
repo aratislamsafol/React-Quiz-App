@@ -1,27 +1,27 @@
 import { get, getDatabase, orderByKey, query, ref } from "firebase/database";
 import { useEffect, useState } from "react";
 
-export default function QuizQuestionHook(VideoId){
+export default function AnswerResult(VideoId){
     const [loading,setLoading]=useState(true);
     const [error,setError]=useState(false);
-    const [questions,setQuestions]=useState([]);
+    const [answers,setAnswers]=useState([]);
 
     useEffect(() => {
-        async function fetchQuizData(){
+        async function fetchAnswerData(){
             const db=getDatabase();
-            const quizRef=ref(db,"quiz/"+VideoId+"/questions"); 
-            const questionQuery=query(quizRef,orderByKey());
+            const answerRef=ref(db,"answers/"+VideoId+"/questions"); 
+            const answerQuery=query(answerRef,orderByKey());
             try{
                 setError(false);
                 setLoading(true);
-                const snapshot=await get(questionQuery);
+                const snapshot=await get(answerQuery);
                
                 setLoading(false);
 
                 if(snapshot.exists()){
-                    // console.log(snapshot.val());
-                    setQuestions((prevQuestions) => {
-                        return [...prevQuestions, ...Object.values(snapshot.val())];
+                    console.log(snapshot.val());
+                    setAnswers((prevAnswers) => {
+                        return [...prevAnswers, ...Object.values(snapshot.val())];
                     });
                 }
             }catch(err){
@@ -30,12 +30,12 @@ export default function QuizQuestionHook(VideoId){
                 setError(true);
             }
         }
-        fetchQuizData();
+        fetchAnswerData();
     }, [VideoId]);
 
     return {
         loading,
         error,
-        questions,
+        answers,
     };
 }

@@ -44,7 +44,6 @@
     position: absolute;
     background-color: black;
     z-index: -1;
-    width: 25%;
     height: 100%;
   }
   .progress:after{
